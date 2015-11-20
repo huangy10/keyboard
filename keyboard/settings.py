@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'keyboard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'common_test',
+        'USER': 'test_user',
+        'PASSWORD': 'huang9040601',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
@@ -103,7 +107,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+MEDIA_URL = '/emoticon/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'emoticon')

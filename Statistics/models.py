@@ -20,11 +20,9 @@ class EmoticonUsage(models.Model):
 
 class EmoticonUpdate(models.Model):
     """This model provides record for emoticon updates.
-
-    The emoticons are updated by types as a group.
     """
     update_time = models.DateTimeField(auto_now_add=True, verbose_name='更新时间')
-    emoticon_type = models.ForeignKey('Emoticon.EmoticonType')
+    emoticon = models.ForeignKey('Emoticon.Emoticon')
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     class Meta:
